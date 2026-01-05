@@ -1,8 +1,15 @@
 <ng-container
   [ngTemplateOutlet]="slot_page() || null"
   [ngTemplateOutletContext]="{
-  $implicit: {
-    config: $config,
-  }
- }"
+    $implicit: {
+      document: document,
+      window: window,
+      storage: $storage,
+      config: $config,
+      cache: $cache,
+      flags: $flags,
+      ps: $ps,
+      emitter: $emitter
+    }
+  }"
 ></ng-container>

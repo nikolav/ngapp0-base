@@ -10,6 +10,7 @@
 .env.test.local
 vars.env.ts
 vars.env*.ts
+!vars.env.public.ts
 
 !.env.example
 
@@ -151,4 +152,4 @@ dummyogg.ogg
 # Custom / project-specific
 ###############################################################################
 __screenshots__/
-
+tinker.ts
