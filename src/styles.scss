@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@use "./app/assets/styles/vars";
+@use "./app/assets/styles/globals";
+
+@use "./app/assets/styles/base";
+@use "./app/assets/styles/reset_baseline";
+@use "./app/assets/styles/scrollbars";
+@use "./app/assets/styles/reset_custom";
+
+// @import "./app/assets/styles/tailwind";
+
+// @import "./app/assets/styles/material/mat";
+// @import "./app/assets/styles/material/custom";
+
+// @import "@fancyapps/ui/dist/fancybox/fancybox.css";
