@@ -70,6 +70,7 @@ const MODULES_SHARED = [
   MatProgressBarModule,
   MatBadgeModule,
   MatChipsModule,
+
   // #datepicker
   MatDatepickerModule,
 ];
