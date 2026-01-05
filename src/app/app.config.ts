@@ -14,6 +14,13 @@ import {
 } from "@angular/platform-browser";
 
 import { provideAnimationsAsync } from "@angular/platform-browser/animations/async";
+import {
+  provideHttpClient,
+  withFetch,
+  withInterceptors,
+} from "@angular/common/http";
+
+import { logRequestInterceptor } from "./middleware";
 
 import { MAT_DATE_FORMATS } from "@angular/material/core";
 import {
@@ -25,12 +32,26 @@ import { MAT_DAYJS_DATE_FORMATS, MAT_DEFAULTS } from "./config";
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes),
-    provideClientHydration(withEventReplay()),
-    //
     importProvidersFrom(CommonModule),
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideClientHydration(withEventReplay()),
+
+    // ##routes
+    provideRouter(routes),
+
+    //
     provideAnimationsAsync(),
+
+    // ##http
+    provideHttpClient(
+      withFetch(),
+      withInterceptors([
+        // interceptor --log-http
+        logRequestInterceptor,
+        // interceptor --set-auth-header
+        // authRequestInterceptor,
+      ])
+    ),
 
     // ## mat-datepicker/timepicker
     // { provide: MAT_DATE_LOCALE, useValue: "sr-RS" },

@@ -47,6 +47,7 @@ yarn-error.log*
 .yarn/unplugged/
 .yarn/build-state.yml
 .yarn/install-state.gz
+# package-lock.json
 
 ###############################################################################
 # Frameworks / hosting platforms
@@ -135,6 +136,7 @@ temp.css
 temp.ts
 temp.txt
 tmp/
+tinker.ts
 
 ###############################################################################
 # Media / large binaries
@@ -152,4 +154,3 @@ dummyogg.ogg
 # Custom / project-specific
 ###############################################################################
 __screenshots__/
-tinker.ts
