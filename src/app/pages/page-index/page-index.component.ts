@@ -11,6 +11,9 @@ import { UseUtilsService } from "../../services";
   templateUrl: "./page-index.component.html",
   styleUrl: "./page-index.component.scss",
   changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    class: "app-container-reset",
+  },
 })
 export class PageIndexComponent {
   readonly $$ = inject(UseUtilsService);
