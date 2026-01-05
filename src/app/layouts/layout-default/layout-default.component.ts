@@ -27,6 +27,9 @@ import type { TOrNoValue } from "../../types";
   templateUrl: "./layout-default.component.html",
   styleUrl: "./layout-default.component.scss",
   changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    class: "app-container-reset",
+  },
 })
 export class LayoutDefaultComponent {
   // $

@@ -1,12 +1,15 @@
-<div>
-  <a routerLink="">home</a>
-  <span>|</span>
-  <a routerLink="/demo">demo</a>
-</div>
-<div
-  [@routeTransitionBlurInOut]="
-    outlet.activatedRouteData['key'] ?? '--DEFAULT--'
-  "
->
-  <router-outlet #outlet="outlet"></router-outlet>
-</div>
+<main class="app--main">
+  <div>
+    <a routerLink="">home</a>
+    <span>|</span>
+    <a routerLink="/demo">demo</a>
+  </div>
+  <div
+    class="app-container-reset"
+    [@routeTransitionBlurInOut]="
+      outlet.activatedRouteData['key'] ?? '--DEFAULT--'
+    "
+  >
+    <router-outlet #outlet="outlet"></router-outlet>
+  </div>
+</main>

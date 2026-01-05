@@ -7,5 +7,8 @@ import { LayoutDefault } from "../../layouts";
   templateUrl: "./page-demo.component.html",
   styleUrl: "./page-demo.component.scss",
   changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    class: "app-container-reset",
+  },
 })
 export class PageDemoComponent {}

@@ -9,6 +9,9 @@ import { routeTransitionBlurInOut } from "./assets/route-transitions";
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.scss",
   animations: [routeTransitionBlurInOut],
+  host: {
+    class: "app-container-reset",
+  },
 })
 export class AppComponent {
   title = "app";
