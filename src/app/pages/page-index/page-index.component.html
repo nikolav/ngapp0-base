@@ -4,5 +4,6 @@
     <div>
       <pre>app:key [{{ app.config.APP_KEY }}]</pre>
     </div>
+    <button (click)="$$.onDebug({ '@debug': $$.idGen() })">ok</button>
   </ng-template>
 </app-layout-default>
