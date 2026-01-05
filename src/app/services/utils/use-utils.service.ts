@@ -33,7 +33,7 @@ import {
   arrayLs,
   toObs$$,
   strEnsureHasPrefix,
-  // ngTemplateToPortal,
+  ngTemplateToPortal,
   normalizedSet,
 } from "../../utils";
 
@@ -228,5 +228,5 @@ export class UseUtilsService {
   log = console.log.bind(console);
 
   // cdk, mat utils
-  // ngTemplateToPortal = ngTemplateToPortal;
+  ngTemplateToPortal = ngTemplateToPortal;
 }
