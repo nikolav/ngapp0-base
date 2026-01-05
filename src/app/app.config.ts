@@ -14,12 +14,12 @@ import {
 } from "@angular/platform-browser";
 
 import { provideAnimationsAsync } from "@angular/platform-browser/animations/async";
+
 import {
   provideHttpClient,
   withFetch,
   withInterceptors,
 } from "@angular/common/http";
-
 import { logRequestInterceptor } from "./middleware";
 
 import { MAT_DATE_FORMATS } from "@angular/material/core";
