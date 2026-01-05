@@ -15,6 +15,7 @@ import {
   AppConfigService,
   EmitterService,
   LocalStorageService,
+  UseDisplayService,
   UsePageTitleService,
 } from "../../services";
 import { TOKEN_windowDefaultView } from "../../keys";
@@ -41,7 +42,7 @@ export class LayoutDefaultComponent {
   readonly $emitter = inject(EmitterService);
   readonly $config = inject(AppConfigService);
   readonly $ttl = inject(UsePageTitleService);
-  // readonly $display = inject(UseDisplayService);
+  readonly $display = inject(UseDisplayService);
   // readonly $auth = inject(StoreAuth);
   // readonly $userData = inject(StoreAuthProfile);
 

@@ -12,10 +12,6 @@ export type TOrNoValue<T = unknown> = T | undefined | null;
 export type TFunctionVoid = <TArg = unknown>(...args: TArg[]) => void;
 export type ElementOf<T extends readonly unknown[]> = T[number];
 export type THasId<T = unknown, TId = unknown> = T & { id: TId };
-export type TManageSubscriptionsCache = Record<
-  string,
-  TOrNoValue<Subscription>
->;
 export type {
   TBreakpointsCustom,
   TBreakpointCustom,
@@ -33,6 +29,10 @@ export interface ISToreFlagsCache {
   [name: string]: boolean;
 }
 export type { TRecordJson, TJson, TJsonLiteral, MaybeAsync as TMaybeAsync };
+export type TManageSubscriptionsCache = Record<
+  string,
+  TOrNoValue<Subscription>
+>;
 export interface CdkPortalFactoryOptions {
   // Required for TemplatePortal (and for ComponentPortal if you want a specific host)
   viewContainerRef?: ViewContainerRef;
