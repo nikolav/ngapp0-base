@@ -17,6 +17,7 @@ export { StatusResult } from "./status-result";
 export { toObs$$ } from "./to-obs";
 export { trimEndBase } from "./trim-end-base";
 export { untilDestroyed } from "./until-destroyed";
+export { MemoryStorage } from "./class-memory-storage";
 
 //
 export * from "./str";
