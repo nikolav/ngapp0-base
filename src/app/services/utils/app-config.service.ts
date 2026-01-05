@@ -16,7 +16,11 @@ import {
   APP_KEY,
 } from "../../config";
 
-const withTimestamps = (ls: any[]) => [...ls, "created_at", "updated_at"];
+const withTimestamps = <T = unknown>(ls: T[]) => [
+  ...ls,
+  "created_at",
+  "updated_at",
+];
 
 @Injectable({
   providedIn: "root",
