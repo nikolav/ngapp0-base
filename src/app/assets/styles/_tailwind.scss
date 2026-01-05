@@ -1,8 +1,12 @@
-@use "tailwindcss/base";
-@use "tailwindcss/components";
-@use "tailwindcss/utilities";
-@use "tailwindcss/variants";
-@use "tailwindcss/screens";
+// @use "tailwindcss/base";
+// @use "tailwindcss/components";
+// @use "tailwindcss/utilities";
+// @use "tailwindcss/variants";
+// @use "tailwindcss/screens";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer components {
   // .cdk-overlay-dark-backdrop-blured {
