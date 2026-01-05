@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "cat ./src/app/assets/index.development.html > ./src/index.html && ng serve ",
-    "build": "cat ./src/app/assets/index.production.html > ./src/index.html && ng build ",
+    "start": "cp ./src/app/config/vars.env.development.ts ./src/app/config/vars.env.ts && cat ./src/app/assets/index.development.html > ./src/index.html && ng serve ",
+    "build": "cp ./src/app/config/vars.env.production.ts ./src/app/config/vars.env.ts && cat ./src/app/assets/index.production.html > ./src/index.html && ng build ",
     "build:static": "ng build --output-mode=static",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -24,6 +24,7 @@
     "@angular/router": "^19.2.0",
     "@angular/ssr": "^19.2.19",
     "@eturino/ts-parse-boolean": "^1.1.3",
+    "dayjs": "^1.11.19",
     "express": "^4.18.2",
     "lodash": "^4.17.21",
     "md5": "^2.3.0",

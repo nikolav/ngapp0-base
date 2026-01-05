@@ -5,6 +5,7 @@ import type {
   TJson,
   TJsonLiteral,
 } from "../schemas/json.schema";
+// import type { Point } from "./models";
 
 export type TOrNoValue<T = unknown> = T | undefined | null;
 export type TFunctionVoid = <TArg = unknown>(...args: TArg[]) => void;

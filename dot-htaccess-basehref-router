@@ -1,0 +1,41 @@
+# =========================================================
+# Enable rewrite engine
+# =========================================================
+RewriteEngine On
+
+# =========================================================
+# 1) Route everything into /public_html (if not already there)
+# =========================================================
+RewriteCond %{REQUEST_URI} !^/public_html/
+RewriteRule ^(.*)$ public_html/$1 [L]
+
+# =========================================================
+# 2) Security: block hidden + sensitive files
+#    (do this early)
+# =========================================================
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+<FilesMatch "\.(env|log|ini|json|yaml|yml|sql|bak|config)$">
+  Require all denied
+</FilesMatch>
+
+# =========================================================
+# 3) Allow existing files/dirs inside public_html
+# =========================================================
+RewriteCond %{DOCUMENT_ROOT}/public_html/%{REQUEST_FILENAME} -f [OR]
+RewriteCond %{DOCUMENT_ROOT}/public_html/%{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# =========================================================
+# 4) Extensionless prerender support:
+#    If "/route" has a matching "/route.html", serve it
+# =========================================================
+RewriteCond %{DOCUMENT_ROOT}/public_html/%{REQUEST_FILENAME}.html -f
+RewriteRule ^ %{REQUEST_URI}.html [L]
+
+# =========================================================
+# 5) SPA fallback (only if nothing matched above)
+# =========================================================
+RewriteRule ^ public_html/index.html [L]
