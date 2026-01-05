@@ -1,6 +1,9 @@
 <app-layout-default class="page--index" page-title="🏠 Dobrodošli">
   <ng-template #slot_page let-app>
-    <h1 class="bg-banana text-black">&#64;page:index</h1>
-    <button mat-button (click)="ok()">ok</button>
+    <h1>&#64;page:index</h1>
+    <div>
+      <pre>app:key [{{ app.config.APP_KEY }}]</pre>
+    </div>
+    <button (click)="$$.onDebug({ '@debug': $$.idGen() })">ok</button>
   </ng-template>
 </app-layout-default>

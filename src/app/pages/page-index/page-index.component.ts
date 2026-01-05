@@ -1,6 +1,9 @@
-import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
+
 import { LayoutDefault } from "../../layouts";
 import { CoreModulesShared, MaterialSharedModule } from "../../modules";
+
+import { UseUtilsService } from "../../services";
 
 @Component({
   selector: "app-page-index",
@@ -10,7 +13,5 @@ import { CoreModulesShared, MaterialSharedModule } from "../../modules";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PageIndexComponent {
-  ok() {
-    console.log("@ok");
-  }
+  readonly $$ = inject(UseUtilsService);
 }
