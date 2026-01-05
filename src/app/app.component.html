@@ -3,4 +3,10 @@
   <span>|</span>
   <a routerLink="/demo">demo</a>
 </div>
-<router-outlet />
+<div
+  [@routeTransitionBlurInOut]="
+    outlet.activatedRouteData['key'] ?? '--DEFAULT--'
+  "
+>
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>
