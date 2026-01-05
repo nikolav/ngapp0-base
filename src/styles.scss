@@ -9,7 +9,7 @@
 
 // @import "./app/assets/styles/tailwind";
 
-// @import "./app/assets/styles/material/mat";
-// @import "./app/assets/styles/material/custom";
+@use "./app/assets/styles/material/mat";
+@use "./app/assets/styles/material/custom";
 
 // @import "@fancyapps/ui/dist/fancybox/fancybox.css";

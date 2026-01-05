@@ -3,6 +3,8 @@ import { CommonModule, NgOptimizedImage } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
+import { CdkModulesShared } from "../cdk/cdk-shared-modules/cdk-shared-modules.module";
+
 const MODULES = [
   CommonModule,
   RouterModule,
@@ -10,7 +12,7 @@ const MODULES = [
   ReactiveFormsModule,
   NgOptimizedImage,
   // cdk
-  // CdkModulesShared,
+  CdkModulesShared,
 ];
 
 @NgModule({
