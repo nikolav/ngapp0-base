@@ -20,6 +20,4 @@ export { untilDestroyed } from "./until-destroyed";
 
 //
 export * from "./str";
-
-//
-// export { ngTemplateToPortal } from "./ng-template-to-portal";
+export * from "./cdk-utils";
