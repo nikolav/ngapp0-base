@@ -1,0 +1,8 @@
+<ng-container
+  [ngTemplateOutlet]="slot_page() || null"
+  [ngTemplateOutletContext]="{
+  $implicit: {
+    config: $config,
+  }
+ }"
+></ng-container>
