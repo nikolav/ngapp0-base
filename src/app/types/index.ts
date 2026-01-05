@@ -18,6 +18,9 @@ export interface IEventOnStorage<TPayload = unknown>
   extends IEventApp<TPayload> {
   action: "push" | "drop";
 }
+export interface ISToreFlagsCache {
+  [name: string]: boolean;
+}
 export type { TRecordJson, TJson, TJsonLiteral, MaybeAsync as TMaybeAsync };
 export type TManageSubscriptionsCache = Record<
   string,

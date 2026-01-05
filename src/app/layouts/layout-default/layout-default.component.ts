@@ -11,7 +11,6 @@ import { DOCUMENT } from "@angular/common";
 
 import { CoreModulesShared } from "../../modules";
 
-import type { TOrNoValue } from "../../types";
 import {
   AppConfigService,
   EmitterService,
@@ -19,6 +18,8 @@ import {
   UsePageTitleService,
 } from "../../services";
 import { TOKEN_windowDefaultView } from "../../keys";
+import { StoreAppProcessing, StoreFlags, StoreMain } from "../../stores";
+import type { TOrNoValue } from "../../types";
 
 @Component({
   selector: "app-layout-default",
@@ -28,20 +29,21 @@ import { TOKEN_windowDefaultView } from "../../keys";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LayoutDefaultComponent {
+  // $
   readonly document = inject(DOCUMENT);
-  readonly window = inject(TOKEN_windowDefaultView);
-  readonly $storage = inject(LocalStorageService);
-  // readonly $display = inject(UseDisplayService);
-  // readonly $cache = inject(StoreMain);
-  // readonly $flags = inject(StoreFlags);
-  // readonly $ps = inject(StoreAppProcessing);
-  readonly $emitter = inject(EmitterService);
-  // readonly $auth = inject(StoreAuth);
-  // readonly $userData = inject(StoreAuthProfile);
 
   // $$
+  readonly window = inject(TOKEN_windowDefaultView);
+  readonly $storage = inject(LocalStorageService);
+  readonly $cache = inject(StoreMain);
+  readonly $flags = inject(StoreFlags);
+  readonly $ps = inject(StoreAppProcessing);
+  readonly $emitter = inject(EmitterService);
   readonly $config = inject(AppConfigService);
   readonly $ttl = inject(UsePageTitleService);
+  // readonly $display = inject(UseDisplayService);
+  // readonly $auth = inject(StoreAuth);
+  // readonly $userData = inject(StoreAuthProfile);
 
   // [@]
   readonly pageTitle = input<TOrNoValue<string>>(null, { alias: "page-title" });
