@@ -10,6 +10,7 @@
 .env.test.local
 vars.env.ts
 vars.env*.ts
+!vars.env.public.ts
 
 !.env.example
 
