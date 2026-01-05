@@ -7,10 +7,18 @@ import {
   input,
   TemplateRef,
 } from "@angular/core";
+import { DOCUMENT } from "@angular/common";
 
 import { CoreModulesShared } from "../../modules";
 
-import { AppConfigService, UsePageTitleService } from "../../services";
+import {
+  AppConfigService,
+  EmitterService,
+  LocalStorageService,
+  UsePageTitleService,
+} from "../../services";
+import { TOKEN_windowDefaultView } from "../../keys";
+import { StoreAppProcessing, StoreFlags, StoreMain } from "../../stores";
 import type { TOrNoValue } from "../../types";
 
 @Component({
@@ -21,9 +29,21 @@ import type { TOrNoValue } from "../../types";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LayoutDefaultComponent {
+  // $
+  readonly document = inject(DOCUMENT);
+
   // $$
+  readonly window = inject(TOKEN_windowDefaultView);
+  readonly $storage = inject(LocalStorageService);
+  readonly $cache = inject(StoreMain);
+  readonly $flags = inject(StoreFlags);
+  readonly $ps = inject(StoreAppProcessing);
+  readonly $emitter = inject(EmitterService);
   readonly $config = inject(AppConfigService);
   readonly $ttl = inject(UsePageTitleService);
+  // readonly $display = inject(UseDisplayService);
+  // readonly $auth = inject(StoreAuth);
+  // readonly $userData = inject(StoreAuthProfile);
 
   // [@]
   readonly pageTitle = input<TOrNoValue<string>>(null, { alias: "page-title" });
