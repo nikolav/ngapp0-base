@@ -1,5 +1,8 @@
-import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
+
 import { LayoutDefault } from "../../layouts";
+
+import { UseUtilsService } from "../../services";
 
 @Component({
   selector: "app-page-index",
@@ -8,4 +11,6 @@ import { LayoutDefault } from "../../layouts";
   styleUrl: "./page-index.component.scss",
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PageIndexComponent {}
+export class PageIndexComponent {
+  readonly $$ = inject(UseUtilsService);
+}
